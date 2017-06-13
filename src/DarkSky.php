@@ -11,8 +11,14 @@ namespace Naughtonium\LaravelDarkSky;
 
 class DarkSky
 {
-    function __construct()
+    public function __construct()
+    {
+
+    }
+
+    public function test()
     {
         dd('heyo');
     }
+
 }
