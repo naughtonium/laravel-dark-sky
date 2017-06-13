@@ -13,7 +13,13 @@ class LaravelDarkSkyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+//        $source = dirname(__DIR__).'/../../config/geocode.php';
+//        if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
+//            $this->publishes([$source => config_path('geocode.php')]);
+//        } elseif ($this->app instanceof LumenApplication) {
+//            $this->app->configure('geocode');
+//        }
+//        $this->mergeConfigFrom($source, 'geocode');
     }
 
     /**
@@ -23,10 +29,16 @@ class LaravelDarkSkyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(LaravelDarkSky::class, function () {
-            return new LaravelDarkSky();
+        $this->app->singleton('darksky',function($app)
+        {
+            return new DarkSky();
         });
 
-        $this->app->alias(LaravelDarkSky::class, 'laravel-dark-sky');
+        $this->app->booting(function ()
+        {
+            $loader = \Illuminate\Foundation\AliasLoader::getInstance();
+            $loader->alias('DarkSky', \Naughtonium\LaravelDarkSky\Facades\DarkSky::class);
+        });
+
     }
 }
