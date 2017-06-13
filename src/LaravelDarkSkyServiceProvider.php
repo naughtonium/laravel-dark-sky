@@ -13,7 +13,7 @@ class LaravelDarkSkyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        dd('test');
     }
 
     /**
