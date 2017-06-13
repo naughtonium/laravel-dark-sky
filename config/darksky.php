@@ -1,4 +1,4 @@
 <?php
 return [
-    'apikey' => env('DARKSKY_APIKEY', ''),
+    'apikey' => env('DARKSKY_API_KEY', ''),
 ];

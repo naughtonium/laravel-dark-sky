@@ -13,7 +13,7 @@ class LaravelDarkSkyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $source = dirname(__DIR__).'/../config/darksky.php';
+        $source = dirname(__DIR__).'/config/darksky.php';
 
         $this->publishes([$source => config_path('darksky.php')]);
 
