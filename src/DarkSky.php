@@ -14,7 +14,7 @@ class DarkSky
     protected $apiKey;
     protected $endpoint = 'https://api.darksky.net/forecast/';
     protected $params = '?';
-
+    protected $excludeables = ['currently', 'minutely', 'hourly', 'daily', 'alerts', 'flags'];
 
     public function __construct()
     {
@@ -34,7 +34,7 @@ class DarkSky
         return json_decode($client->get($this->endpoint . $this->params)->getBody());
     }
 
-    public function exclude($blocks)
+    public function excludes($blocks)
     {
         $this->params .= 'exclude=';
 
@@ -42,6 +42,14 @@ class DarkSky
             $this->params .= $block . ',';
         }
 
+        $this->params .= '&';
+
         return $this;
     }
+
+    public function includes($blocks)
+    {
+
+    }
+
 }
