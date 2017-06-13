@@ -12,15 +12,18 @@ namespace Naughtonium\LaravelDarkSky;
 class DarkSky
 {
     protected $apiKey;
+    protected $endpoint = 'https://api.darksky.net/forecast/';
 
     public function __construct()
     {
         $this->apiKey = config('darksky.apikey');
+        $this->endpoint = $this->endpoint . $this->apiKey . '/';
     }
 
-    public function test()
+    public function location($lat, $lon)
     {
-        dd($this->apiKey);
+        
     }
+
 
 }
