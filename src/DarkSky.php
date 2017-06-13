@@ -11,14 +11,16 @@ namespace Naughtonium\LaravelDarkSky;
 
 class DarkSky
 {
+    protected $apiKey;
+
     public function __construct()
     {
-
+        $this->apiKey = config('darksky.apikey');
     }
 
     public function test()
     {
-        dd('heyo');
+        dd($this->apiKey);
     }
 
 }
