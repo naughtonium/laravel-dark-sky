@@ -47,7 +47,9 @@ class DarkSky
             unset(array_search($block, $this->excludeables));
         }
 
-        $this->params .= 'excludes='
+        $this->params .= 'excludes=' . implode(',', $this->excludeables) . '&';
+
+        return $this;
     }
 
 }
