@@ -44,7 +44,7 @@ class DarkSky
     public function includes($blocks)
     {
         foreach ($blocks as $block) {
-            unset(array_search($block, $this->excludeables));
+            unset($blocks[array_search($block, $this->excludeables)]);
         }
 
         $this->params .= 'excludes=' . implode(',', $this->excludeables) . '&';
