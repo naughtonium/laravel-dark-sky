@@ -44,10 +44,10 @@ class DarkSky
     public function includes($blocks)
     {
         foreach ($blocks as $block) {
-            unset($blocks[array_search($block, $this->excludeables)]);
+            unset($this->excludeables[array_search($block, $this->excludeables)]);
         }
 
-        $this->params .= 'excludes=' . implode(',', $this->excludeables) . '&';
+        $this->params .= 'exclude=' . implode(',', $this->excludeables) . '&';
 
         return $this;
     }
