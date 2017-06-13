@@ -22,8 +22,11 @@ class DarkSky
 
     public function location($lat, $lon)
     {
-        
+        $this->endpoint = $this->endpoint . $lat . ',' . $lon;
     }
 
+    public function get()
+    {
 
+    }
 }
