@@ -13,7 +13,7 @@ class LaravelDarkSkyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        dd('test');
+        //
     }
 
     /**
@@ -23,6 +23,10 @@ class LaravelDarkSkyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(LaravelDarkSky::class, function () {
+            return new LaravelDarkSky();
+        });
+
+        $this->app->alias(LaravelDarkSky::class, 'laravel-dark-sky');
     }
 }
