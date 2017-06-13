@@ -13,13 +13,14 @@ class LaravelDarkSkyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//        $source = dirname(__DIR__).'/../../config/geocode.php';
-//        if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
-//            $this->publishes([$source => config_path('geocode.php')]);
-//        } elseif ($this->app instanceof LumenApplication) {
-//            $this->app->configure('geocode');
-//        }
-//        $this->mergeConfigFrom($source, 'geocode');
+        $source = dirname(__DIR__).'/../../config/darksky.php';
+
+        if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
+            $this->publishes([$source => config_path('geocode.php')]);
+        } elseif ($this->app instanceof LumenApplication) {
+            $this->app->configure('geocode');
+        }
+        $this->mergeConfigFrom($source, 'geocode');
     }
 
     /**
