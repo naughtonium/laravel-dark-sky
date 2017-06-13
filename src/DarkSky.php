@@ -23,10 +23,12 @@ class DarkSky
     public function location($lat, $lon)
     {
         $this->endpoint = $this->endpoint . $lat . ',' . $lon;
+        return $this;
     }
 
     public function get()
     {
-
+        $client = new \GuzzleHttp\Client();
+        return json_decode($client->get($this->endpoint)->getBody());
     }
 }
