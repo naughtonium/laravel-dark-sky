@@ -26,10 +26,25 @@ vendor/
 
 ## Install
 
-Via Composer
+Require this package with composer using the following command:
 
 ``` bash
-$ composer require https://github.com/naughtonium/laravel-dark-sky/laravel-dark-sky
+$ composer require naughtonium/laravel-dark-sky
+```
+
+
+After updating composer, add the service provider to the `providers` array in `config/app.php`
+
+```php
+Naughtonium\LaravelDarkSky\LaravelDarkSkyServiceProvider::class,
+```
+
+## Configuration
+
+Add the following line to the .env file:
+
+```sh
+DARKSKY_API_KEY=<your_darksky_api_key>
 ```
 
 ## Usage
@@ -38,24 +53,6 @@ $ composer require https://github.com/naughtonium/laravel-dark-sky/laravel-dark-
 $skeleton = new Naughtonium\LaravelDarkSky();
 echo $skeleton->echoPhrase('Hello, League!');
 ```
-
-## Change log
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Testing
-
-``` bash
-$ composer test
-```
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
-
-## Security
-
-If you discover any security related issues, please email jack.naughton18@gmail.com instead of using the issue tracker.
 
 ## Credits
 
