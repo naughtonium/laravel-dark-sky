@@ -17,10 +17,12 @@ $fields = [
     'psr4_namespace' =>         ['PSR-4 namespace',       'usually, Vendor\\Package',                        '{naughtonium}\\{laravel-dark-sky}'],
 ];
 
-$values = [];
+$values = [
+    'psr4_namespace' => 'naughtonium/laravel-dark-sky'
+];
 
 $replacements = [
-    'naughtonium\\\\laravel-dark-sky\\\\' => function () use(&$values) { return str_replace('\\', '\\\\', $values['psr4_namespace']) . '\\\\'; },
+    ':vendor\\\\:package_name\\\\' => function () use(&$values) { return str_replace('\\', '\\\\', $values['psr4_namespace']) . '\\\\'; },
     ':author_name'                 => function () use(&$values) { return $values['author_name']; },
     ':author_username'             => function () use(&$values) { return $values['author_github_username']; },
     ':author_website'              => function () use(&$values) { return $values['author_website'] ?: ('https://github.com/' . $values['author_github_username']); },
