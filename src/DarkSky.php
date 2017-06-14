@@ -43,7 +43,7 @@ class DarkSky
 
         \Log::info($this->params);
         $client = new \GuzzleHttp\Client();
-        return json_decode($client->get($url . [
+        return json_decode($client->get($url, [
             'query' => $this->params,
         ])->getBody());
     }
