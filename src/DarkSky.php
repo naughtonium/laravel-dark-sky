@@ -121,4 +121,16 @@ class DarkSky
         $this->params['lang'] = $lang;
         return $this;
     }
+
+    /**
+     * Sets the return units
+     *
+     * @param $unit
+     * @return $this
+     */
+    public function units($unit)
+    {
+        $this->params['units'] = $unit;
+        return $this;
+    }
 }
