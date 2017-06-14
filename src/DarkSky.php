@@ -61,6 +61,7 @@ class DarkSky
     public function atTime($timestamp)
     {
         $this->timestamp = $timestamp;
+        return $this;
     }
 
 }
