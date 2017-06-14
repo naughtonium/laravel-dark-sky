@@ -1,7 +1,7 @@
 {
     "name": "naughtonium/laravel-dark-sky",
     "type": "library",
-    "description": "Provides a wrapper for the DarkSky API",
+    "description": "Provides a Wrapper for the DarkSky API",
     "keywords": [
         "naughtonium",
         "laravel-dark-sky"
