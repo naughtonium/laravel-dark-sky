@@ -34,16 +34,15 @@ For full details of response formats, visit: https://darksky.net/dev/docs/respon
 
 Pass in latitude and longitude coordinates for a basic response
 ``` php
-DarkSky::location(lat, lon)->get()
+DarkSky::location(lat, lon)->get();
 ```
 #### Optional Parameters
 For full details of optional parameters, visit: https://darksky.net/dev/docs/forecast
 
 Specify which data blocks to exclude/include to reduce data transfer
 ```php
-DarkSky::location(lat, lon)->excludes(['minutely','hourly', 'daily', 'alerts', 'flags'])->get()
-DarkSky::location(lat, lon)->includes(['currently'])->get()
-
+DarkSky::location(lat, lon)->excludes(['minutely','hourly', 'daily', 'alerts', 'flags'])->get();
+DarkSky::location(lat, lon)->includes(['currently'])->get();
 // Same output
 ```
 
@@ -51,21 +50,36 @@ Pass in timestamp to get forecast for that time.
 Note: the timezone is relative to the given location
 
 ``` php
-DarkSky::location(lat, lon)->atTime(timestamp)->get()
+DarkSky::location(lat, lon)->atTime(timestamp)->get();
 ```
-Specify a language
+Specify a language for text based responses
 ``` php
-DarkSky::location(lat, lon)->language(lang)->get()
+DarkSky::location(lat, lon)->language(lang)->get();
 ```
-Specify units
+Specify units for unit based responses
 ``` php
-DarkSky::location(lat, lon)->units(units)->get()
+DarkSky::location(lat, lon)->units(units)->get();
 ```
-Extend the "hourly" response from 48 to 168 hours
-Note: Does not work if used with an atTime() timestamp
+Extend the "hourly" response from 48 to 168 hours.
+Note: Does not work if used with an atTime() timestamp.
 Please see: https://darksky.net/dev/docs/time-machine
 ``` php
-DarkSky::location(lat, lon)->extend()->get()
+DarkSky::location(lat, lon)->extend()->get();
+```
+
+#### Helpers
+The following are shorthand helpers to add readability equal to using includes() with only one parameter. Note: only one may be used per query
+```php
+->currently()
+->minutely()
+->hourly()
+->daily()
+->flags()
+```
+For example, these two statements are the same
+```php
+DarkSky::location(lat, lon)->hourly()->get()
+DarkSky::location(lat, lon)->includes(['hourly'])->get()
 ```
 ### Credits
 
