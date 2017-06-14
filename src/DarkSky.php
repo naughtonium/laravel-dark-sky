@@ -13,7 +13,7 @@ class DarkSky
 {
     protected $apiKey;
     protected $endpoint = 'https://api.darksky.net/forecast/';
-    protected $params = '?';
+    protected $params = [];
     protected $excludeables = ['currently', 'minutely', 'hourly', 'daily', 'alerts', 'flags'];
 
     public function __construct()
@@ -36,19 +36,13 @@ class DarkSky
 
     public function excludes($blocks)
     {
-        $this->params .= 'exclude=' . implode(',', $blocks) . '&';
-
+        $this->params['exclude'] = implode(',', $blocks);
         return $this;
     }
 
     public function includes($blocks)
     {
-        foreach ($blocks as $block) {
-            unset($this->excludeables[array_search($block, $this->excludeables)]);
-        }
-
-        $this->params .= 'exclude=' . implode(',', $this->excludeables) . '&';
-
+        $this->params['exclude='] = implode(',', array_diff($this->excludeables, $blocks));
         return $this;
     }
 
