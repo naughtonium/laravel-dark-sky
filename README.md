@@ -32,6 +32,7 @@ DARKSKY_API_KEY=<your_darksky_api_key>
 ### Usage
 For full details of response formats, visit: https://darksky.net/dev/docs/response
 
+#### Required
 ##### location(lat, lon)
 Pass in latitude and longitude coordinates for a basic response
 ``` php
