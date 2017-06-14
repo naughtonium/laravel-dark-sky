@@ -32,6 +32,7 @@ DARKSKY_API_KEY=<your_darksky_api_key>
 ### Usage
 For full details of response formats, visit: https://darksky.net/dev/docs/response
 
+##### location(lat, lon)
 Pass in latitude and longitude coordinates for a basic response
 ``` php
 DarkSky::location(lat, lon)->get();
@@ -39,6 +40,7 @@ DarkSky::location(lat, lon)->get();
 #### Optional Parameters
 For full details of optional parameters, visit: https://darksky.net/dev/docs/forecast
 
+##### excludes([]) / includes([])
 Specify which data blocks to exclude/include to reduce data transfer
 ```php
 DarkSky::location(lat, lon)->excludes(['minutely','hourly', 'daily', 'alerts', 'flags'])->get();
@@ -46,20 +48,24 @@ DarkSky::location(lat, lon)->includes(['currently'])->get();
 // Same output
 ```
 
-Pass in timestamp to get forecast for that time.
+##### atTime(t)
+Pass in a unix timestamp to get forecast for that time.
 Note: the timezone is relative to the given location
 
 ``` php
 DarkSky::location(lat, lon)->atTime(timestamp)->get();
 ```
+##### language(l)
 Specify a language for text based responses
 ``` php
 DarkSky::location(lat, lon)->language(lang)->get();
 ```
+##### units(u)
 Specify units for unit based responses
 ``` php
 DarkSky::location(lat, lon)->units(units)->get();
 ```
+##### extend()
 Extend the "hourly" response from 48 to 168 hours.
 Note: Does not work if used with an atTime() timestamp.
 Please see: https://darksky.net/dev/docs/time-machine
