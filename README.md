@@ -30,10 +30,21 @@ DARKSKY_API_KEY=<your_darksky_api_key>
 ```
 
 ### Usage
+For full details of response formats, visit: https://darksky.net/dev/docs/response
 
+Pass in latitude and longitude coordinates for a basic response
 ``` php
-$skeleton = new Naughtonium\LaravelDarkSky();
-echo $skeleton->echoPhrase('Hello, League!');
+DarkSky::location(lat, lon)->get()
+```
+#### Optional Parameters
+For full details of option parameteres, visit: https://darksky.net/dev/docs/forecast
+
+Specify which data blocks to exclude/include to reduce data transfer
+```php
+DarkSky::location(lat, lon)->excludes(['minutely','hourly', 'daily', 'alerts', 'flags'])->get()
+DarkSky::location(lat, lon)->includes(['currently'])->get()
+
+// Same output
 ```
 
 ### Credits
