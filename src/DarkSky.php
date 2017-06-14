@@ -29,7 +29,7 @@ class DarkSky
     }
 
     /**
-     * Sets the latitude and longitude
+     * Sets the latitude and longitude. Must be set
      *
      * @param $lat
      * @param $lon
@@ -99,4 +99,15 @@ class DarkSky
         return $this;
     }
 
+    /**
+     * Extends the number of hours returned in hourly from 48 to 168
+     * See: https://darksky.net/dev/docs/forecast
+     *
+     * @return $this
+     */
+    public function extend()
+    {
+        $this->params['extend'] = 'hourly';
+        return $this;
+    }
 }
