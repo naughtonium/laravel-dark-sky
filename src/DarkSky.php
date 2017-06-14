@@ -31,7 +31,9 @@ class DarkSky
     public function get()
     {
         $client = new \GuzzleHttp\Client();
-        return json_decode($client->get($this->endpoint . $this->params)->getBody());
+        return json_decode($client->get($this->endpoint . [
+            'query' => $this->params,
+        ])->getBody());
     }
 
     public function excludes($blocks)
