@@ -7,7 +7,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-**Note:** Replace ```:author_name``` ```:author_username``` ```:author_website``` ```:author_email``` ```:vendor``` ```:package_name``` ```:package_description``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. You can run `$ php prefill.php` in the command line to make all replacements at once. Delete the file prefill.php as well.
+**Note:** Replace ```Jack Naughton``` ```holiehandgrenade``` ```http://naughton.io``` ```jack.naughton18@gmail.com``` ```https://github.com/naughtonium/laravel-dark-sky``` ```laravel-dark-sky``` ```Provides a Laravel wrapper for the DarkSky api``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. You can run `$ php prefill.php` in the command line to make all replacements at once. Delete the file prefill.php as well.
 
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
 PSRs you support to avoid any confusion with users and contributors.
@@ -30,13 +30,13 @@ vendor/
 Via Composer
 
 ``` bash
-$ composer require :vendor/:package_name
+$ composer require https://github.com/naughtonium/laravel-dark-sky/laravel-dark-sky
 ```
 
 ## Usage
 
 ``` php
-$skeleton = new League\Skeleton();
+$skeleton = new Naughtonium\LaravelDarkSky();
 echo $skeleton->echoPhrase('Hello, League!');
 ```
 
@@ -56,28 +56,28 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details
 
 ## Security
 
-If you discover any security related issues, please email :author_email instead of using the issue tracker.
+If you discover any security related issues, please email jack.naughton18@gmail.com instead of using the issue tracker.
 
 ## Credits
 
-- [:author_name][link-author]
+- [Jack Naughton][link-author]
 - [All Contributors][link-contributors]
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/:vendor/:package_name.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/https://github.com/naughtonium/laravel-dark-sky/laravel-dark-sky.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/:vendor/:package_name/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/:vendor/:package_name.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/:vendor/:package_name.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/:vendor/:package_name.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/https://github.com/naughtonium/laravel-dark-sky/laravel-dark-sky/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/https://github.com/naughtonium/laravel-dark-sky/laravel-dark-sky.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/https://github.com/naughtonium/laravel-dark-sky/laravel-dark-sky.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/https://github.com/naughtonium/laravel-dark-sky/laravel-dark-sky.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/:vendor/:package_name
-[link-travis]: https://travis-ci.org/:vendor/:package_name
-[link-scrutinizer]: https://scrutinizer-ci.com/g/:vendor/:package_name/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/:vendor/:package_name
-[link-downloads]: https://packagist.org/packages/:vendor/:package_name
-[link-author]: https://github.com/:author_username
+[link-packagist]: https://packagist.org/packages/https://github.com/naughtonium/laravel-dark-sky/laravel-dark-sky
+[link-travis]: https://travis-ci.org/https://github.com/naughtonium/laravel-dark-sky/laravel-dark-sky
+[link-scrutinizer]: https://scrutinizer-ci.com/g/https://github.com/naughtonium/laravel-dark-sky/laravel-dark-sky/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/https://github.com/naughtonium/laravel-dark-sky/laravel-dark-sky
+[link-downloads]: https://packagist.org/packages/https://github.com/naughtonium/laravel-dark-sky/laravel-dark-sky
+[link-author]: https://github.com/holiehandgrenade
 [link-contributors]: ../../contributors
