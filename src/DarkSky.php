@@ -133,4 +133,68 @@ class DarkSky
         $this->params['units'] = $unit;
         return $this;
     }
+
+    ///////////////////////////////////////////////////////////////////
+    //////////////////////////// HELPERS //////////////////////////////
+    ///////////////////////////////////////////////////////////////////
+
+    /**
+     * Appends include for currently
+     * 
+     * @return $this
+     */
+    public function currently()
+    {
+        return $this->includes(['currently']);
+    }
+
+    /**
+     * Appends include for minutely
+     *
+     * @return $this
+     */
+    public function minutely()
+    {
+        return $this->includes(['minutely']);
+    }
+
+    /**
+     * Appends include for hourly
+     *
+     * @return $this
+     */
+    public function hourly()
+    {
+        return $this->includes(['hourly']);
+    }
+
+    /**
+     * Appends include for daily
+     *
+     * @return $this
+     */
+    public function daily()
+    {
+        return $this->includes(['daily']);
+    }
+
+    /**
+     * Appends include for alerts
+     *
+     * @return $this
+     */
+    public function alerts()
+    {
+        return $this->includes(['alerts']);
+    }
+
+    /**
+     * Appends include for flags
+     *
+     * @return $this
+     */
+    public function flags()
+    {
+        return $this->includes(['flags']);
+    }
 }
