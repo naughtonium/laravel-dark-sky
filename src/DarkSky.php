@@ -101,13 +101,24 @@ class DarkSky
 
     /**
      * Extends the number of hours returned in hourly from 48 to 168
-     * See: https://darksky.net/dev/docs/forecast
      *
      * @return $this
      */
     public function extend()
     {
         $this->params['extend'] = 'hourly';
+        return $this;
+    }
+
+    /**
+     * Sets the return language
+     *
+     * @param $lang
+     * @return $this
+     */
+    public function language($lang)
+    {
+        $this->params['lang'] = $lang;
         return $this;
     }
 }
