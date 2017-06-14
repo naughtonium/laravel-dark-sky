@@ -5,22 +5,22 @@ define('COL_DEFAULT', 2);
 
 $fields = [
     'author_name' =>            ['Your name',             '',                                                ''],
-    'author_github_username' => ['Your Github username',  '<username> in https://github.com/username',       ''],
+    'author_github_username' => ['Your Github username',  '<username> in https://github.com/naughtonium',       ''],
     'author_email' =>           ['Your email address',    '',                                                ''],
     'author_twitter' =>         ['Your twitter username', '',                                                '@{author_github_username}'],
-    'author_website' =>         ['Your website',          '',                                                'https://github.com/{author_github_username}'],
+    'author_website' =>         ['Your website',          '',                                                'http://naughton.io'],
 
-    'package_vendor' =>         ['Package vendor',        '<vendor> in https://github.com/vendor/package',   '{author_github_username}'],
+    'package_vendor' =>         ['Package vendor',        '<vendor> in https://github.com/vendor/package',   '{naughtonium}'],
     'package_name' =>           ['Package name',          '<package> in https://github.com/vendor/package',  ''],
     'package_description' =>    ['Package very short description',   '',                                     ''],
 
-    'psr4_namespace' =>         ['PSR-4 namespace',       'usually, Vendor\\Package',                        '{package_vendor}\\{package_name}'],
+    'psr4_namespace' =>         ['PSR-4 namespace',       'usually, Vendor\\Package',                        '{naughtonium}\\{laravel-dark-sky}'],
 ];
 
 $values = [];
 
 $replacements = [
-    ':vendor\\\\:package_name\\\\' => function () use(&$values) { return str_replace('\\', '\\\\', $values['psr4_namespace']) . '\\\\'; },
+    'naughtonium\\\\laravel-dark-sky\\\\' => function () use(&$values) { return str_replace('\\', '\\\\', $values['psr4_namespace']) . '\\\\'; },
     ':author_name'                 => function () use(&$values) { return $values['author_name']; },
     ':author_username'             => function () use(&$values) { return $values['author_github_username']; },
     ':author_website'              => function () use(&$values) { return $values['author_website'] ?: ('https://github.com/' . $values['author_github_username']); },

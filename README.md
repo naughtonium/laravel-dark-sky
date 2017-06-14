@@ -1,6 +1,6 @@
 # Laravel DarkSky
 
-[![Latest Version on Packagist][ico-version]][https://packagist.org/packages/naughtonium/laravel-dark-sky]
+[![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
 [![Build Status][ico-travis]][link-travis]
 [![Coverage Status][ico-scrutinizer]][link-scrutinizer]
