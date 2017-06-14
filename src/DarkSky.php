@@ -59,7 +59,7 @@ class DarkSky
 
         return json_decode($client->get($url, [
             'query' => $this->params,
-        ])->getBody());
+        ])->getBody(), true);
     }
 
     /**
