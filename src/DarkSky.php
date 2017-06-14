@@ -35,13 +35,11 @@ class DarkSky
     public function get()
     {
         $url = $this->endpoint  . '/' . $this->lat . ',' . $this->lon;
-        \Log::info($url);
+
         if ($this->timestamp) {
             $url .= ',' . $this->timestamp;
-            \Log::info($url);
         }
 
-        \Log::info($this->params);
         $client = new \GuzzleHttp\Client();
         return json_decode($client->get($url, [
             'query' => $this->params,
@@ -58,6 +56,11 @@ class DarkSky
     {
         $this->params['exclude'] = implode(',', array_diff($this->excludeables, $blocks));
         return $this;
+    }
+
+    public function atTime($timestamp)
+    {
+        $this->timestamp = $timestamp;
     }
 
 }
