@@ -57,9 +57,9 @@ class DarkSky
 
         $client = new \GuzzleHttp\Client();
 
-        return json_decode($client->get($url, [
+        return collect(json_decode($client->get($url, [
             'query' => $this->params,
-        ])->getBody(), true);
+        ])->getBody(), true));
     }
 
     /**
