@@ -13,25 +13,37 @@ class DarkSky
 {
     protected $apiKey;
     protected $endpoint = 'https://api.darksky.net/forecast/';
+    protected $lat;
+    protected $lon;
+    protected $timestamp = null;
     protected $params = [];
     protected $excludeables = ['currently', 'minutely', 'hourly', 'daily', 'alerts', 'flags'];
 
     public function __construct()
     {
         $this->apiKey = config('darksky.apikey');
-        $this->endpoint = $this->endpoint . $this->apiKey . '/';
+        $this->endpoint = $this->endpoint . $this->apiKey;
     }
 
     public function location($lat, $lon)
     {
-        $this->endpoint = $this->endpoint . $lat . ',' . $lon;
+        $this->lat = $lat;
+        $this->lon = $lon;
         return $this;
     }
 
     public function get()
     {
+        $url = $this->endpoint  . '/' . $this->lat . ',' . $this->lon;
+        \Log::info($url);
+        if ($this->timestamp) {
+            $url .= ',' . $this->timestamp;
+            \Log::info($url);
+        }
+
+        \Log::info($this->params);
         $client = new \GuzzleHttp\Client();
-        return json_decode($client->get($this->endpoint . [
+        return json_decode($client->get($url . [
             'query' => $this->params,
         ])->getBody());
     }
@@ -44,7 +56,7 @@ class DarkSky
 
     public function includes($blocks)
     {
-        $this->params['exclude='] = implode(',', array_diff($this->excludeables, $blocks));
+        $this->params['exclude'] = implode(',', array_diff($this->excludeables, $blocks));
         return $this;
     }
 
