@@ -59,7 +59,7 @@ class DarkSky
 
         return json_decode($client->get($url, [
             'query' => $this->params,
-        ])->getBody(), true);
+        ])->getBody());
     }
 
     /**
@@ -145,7 +145,7 @@ class DarkSky
      */
     public function currently()
     {
-        return $this->includes(['currently']);
+        return $this->includes(['currently'])->get()['currently'];
     }
 
     /**
@@ -155,7 +155,7 @@ class DarkSky
      */
     public function minutely()
     {
-        return $this->includes(['minutely']);
+        return $this->includes(['minutely'])->get()['minutely'];
     }
 
     /**
@@ -165,7 +165,7 @@ class DarkSky
      */
     public function hourly()
     {
-        return $this->includes(['hourly']);
+        return $this->includes(['hourly'])->get()['hourly'];
     }
 
     /**
@@ -175,7 +175,7 @@ class DarkSky
      */
     public function daily()
     {
-        return $this->includes(['daily']);
+        return $this->includes(['daily'])->get()['daily'];
     }
 
     /**
@@ -185,7 +185,7 @@ class DarkSky
      */
     public function alerts()
     {
-        return $this->includes(['alerts']);
+        return $this->includes(['alerts'])->get()['alerts'];
     }
 
     /**
@@ -195,6 +195,6 @@ class DarkSky
      */
     public function flags()
     {
-        return $this->includes(['flags']);
+        return $this->includes(['flags'])->get()['flags'];
     }
 }
