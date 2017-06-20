@@ -21,6 +21,11 @@ After updating composer, add the service provider to the `providers` array in `c
 Naughtonium\LaravelDarkSky\LaravelDarkSkyServiceProvider::class,
 ```
 
+To register a facade accessor, add the following to `config/app.php` `aliases` array
+```php
+'DarkSky' => \Naughtonium\LaravelDarkSky\Facades\DarkSky::class,
+```
+
 ### Configuration
 
 Add the following line to the .env file:
@@ -28,6 +33,7 @@ Add the following line to the .env file:
 ```sh
 DARKSKY_API_KEY=<your_darksky_api_key>
 ```
+
 
 ### Usage
 For full details of response formats, visit: https://darksky.net/dev/docs/response
