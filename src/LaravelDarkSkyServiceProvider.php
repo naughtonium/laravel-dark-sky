@@ -31,12 +31,5 @@ class LaravelDarkSkyServiceProvider extends ServiceProvider
         {
             return new DarkSky();
         });
-
-        $this->app->booting(function ()
-        {
-            $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-            $loader->alias('DarkSky', \Naughtonium\LaravelDarkSky\Facades\DarkSky::class);
-        });
-
     }
 }
