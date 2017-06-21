@@ -139,7 +139,7 @@ class DarkSky
     ///////////////////////////////////////////////////////////////////
 
     /**
-     * Appends include for currently
+     * Filters out metadata to get only currently
      * 
      * @return $this
      */
@@ -149,47 +149,47 @@ class DarkSky
     }
 
     /**
-     * Appends include for minutely
+     * Filters out metadata to get only minutely
      *
      * @return $this
      */
     public function minutely()
     {
-        return $this->includes(['minutely'])->get()->minutely;
+        return $this->includes(['minutely'])->get()->minutely->data;
     }
 
     /**
-     * Appends include for hourly
+     * Filters out metadata to get only hourly
      *
      * @return $this
      */
     public function hourly()
     {
-        return $this->includes(['hourly'])->get()->hourly;
+        return $this->includes(['hourly'])->get()->hourly->data;
     }
 
     /**
-     * Appends include for daily
+     * Filters out metadata to get only daily
      *
      * @return $this
      */
     public function daily()
     {
-        return $this->includes(['daily'])->get()->daily;
+        return $this->includes(['daily'])->get()->daily->data;
     }
 
     /**
-     * Appends include for alerts
+     * Filters out metadata to get only alerts
      *
      * @return $this
      */
     public function alerts()
     {
-        return $this->includes(['alerts'])->get()->alerts;
+        return $this->includes(['alerts'])->get();
     }
 
     /**
-     * Appends include for flags
+     * Filters out metadata to get only flags
      *
      * @return $this
      */
