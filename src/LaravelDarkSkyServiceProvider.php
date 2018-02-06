@@ -15,7 +15,11 @@ class LaravelDarkSkyServiceProvider extends ServiceProvider
     {
         $source = dirname(__DIR__).'/config/darksky.php';
 
-        $this->publishes([$source => config_path('darksky.php')]);
+        if ($this->app instanceof LaravelApplication) {
+            $this->publishes([$source => config_path('darksky.php')]);
+        } elseif ($this->app instanceof LumenApplication) {
+            $this->app->configure('darksky');
+        }
 
         $this->mergeConfigFrom($source, 'darksky');
     }
