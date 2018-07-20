@@ -42,6 +42,14 @@
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Naughtonium\LaravelDarkSky\LaravelDarkSkyServiceProvider"
+            ],
+            "aliases": {
+                "DarkSky": "Naughtonium\LaravelDarkSky\Facades\DarkSky"
+            }
         }
     },
     "config": {
