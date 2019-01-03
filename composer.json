@@ -45,10 +45,10 @@
         },
         "laravel": {
             "providers": [
-                "Naughtonium\LaravelDarkSky\LaravelDarkSkyServiceProvider"
+                "Naughtonium\\LaravelDarkSky\\LaravelDarkSkyServiceProvider"
             ],
             "aliases": {
-                "DarkSky": "Naughtonium\LaravelDarkSky\Facades\DarkSky"
+                "DarkSky": "Naughtonium\\LaravelDarkSky\\Facades\\DarkSky"
             }
         }
     },
