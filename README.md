@@ -14,14 +14,14 @@ Require this package with composer using the following command:
 $ composer require naughtonium/laravel-dark-sky
 ```
 
+In Laravel 5.5, [service providers and aliases are automatically registered](https://laravel.com/docs/6.0/packages#package-discovery). Or you may manually add the service provider and aliases in your config/app.php file.
 
-After updating composer, add the service provider to the `providers` array in `config/app.php`
-
+Add a new item to the `providers` array in `config/app.php`:
 ```php
 Naughtonium\LaravelDarkSky\LaravelDarkSkyServiceProvider::class,
 ```
 
-To register a facade accessor, add the following to `config/app.php` `aliases` array
+Add a new item to the `aliases` array in `config/app.php`:
 ```php
 'DarkSky' => \Naughtonium\LaravelDarkSky\Facades\DarkSky::class,
 ```
