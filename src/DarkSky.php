@@ -8,7 +8,6 @@
 
 namespace Naughtonium\LaravelDarkSky;
 
-
 class DarkSky
 {
     protected $apiKey;
@@ -140,7 +139,7 @@ class DarkSky
 
     /**
      * Filters out metadata to get only currently
-     * 
+     *
      * @return $this
      */
     public function currently()

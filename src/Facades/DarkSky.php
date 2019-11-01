@@ -10,6 +10,8 @@ class DarkSky extends Facade
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return 'darksky'; }
-
+    protected static function getFacadeAccessor()
+    {
+        return 'darksky';
+    }
 }

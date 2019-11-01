@@ -27,8 +27,7 @@ class LaravelDarkSkyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('darksky',function($app)
-        {
+        $this->app->singleton('darksky', function ($app) {
             return new DarkSky();
         });
     }
